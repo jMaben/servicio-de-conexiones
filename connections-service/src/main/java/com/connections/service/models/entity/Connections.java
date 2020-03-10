@@ -12,8 +12,12 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Table(name = "connections")
+@Getter @Setter
 public class Connections implements Serializable{
 	
 	private static final long serialVersionUID = -2173385203936724383L;
@@ -26,85 +30,16 @@ public class Connections implements Serializable{
 	private int port;
 	private String user;
 	private String pass;
+	
+	@Column(unique = true, length = 150)
 	private String alias;
 	private boolean active;
 	
 	@Column(name = "id_type")
 	private int idType;
 	
-	@Column(name = "created_data")
+	@Column(name = "created_date")
 	@Temporal(TemporalType.DATE)
 	private Date createdData;
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getHost() {
-		return host;
-	}
-
-	public void setHost(String host) {
-		this.host = host;
-	}
-
-	public int getPort() {
-		return port;
-	}
-
-	public void setPort(int port) {
-		this.port = port;
-	}
-
-	public String getUser() {
-		return user;
-	}
-
-	public void setUser(String user) {
-		this.user = user;
-	}
-
-	public String getPass() {
-		return pass;
-	}
-
-	public void setPass(String pass) {
-		this.pass = pass;
-	}
-
-	public String getAlias() {
-		return alias;
-	}
-
-	public void setAlias(String alias) {
-		this.alias = alias;
-	}
-
-	public boolean isActive() {
-		return active;
-	}
-
-	public void setActive(boolean active) {
-		this.active = active;
-	}
-
-	public int getIdType() {
-		return idType;
-	}
-
-	public void setIdType(int idType) {
-		this.idType = idType;
-	}
-
-	public Date getCreatedData() {
-		return createdData;
-	}
-
-	public void setCreatedData(Date createdData) {
-		this.createdData = createdData;
-	}
 }
