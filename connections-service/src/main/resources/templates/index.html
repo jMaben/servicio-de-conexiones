@@ -13,13 +13,25 @@
 					<th>ID</th>
 					<th>HOST</th>
 					<th>PORT</th>
+					<th>USER</th>
+					<th>PASS</th>
+					<th>ALIAS</th>
+					<th>ACTIVE</th>
+					<th>ID TYPE</th>
+					<th>DATE</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="Connections:${connec}">
-					<td>${Connections.id}</td>
-					<td>${Connections.host}</td>
-					<td>${Connections.port}</td>
+				<tr th:each="conexion:${conexiones}">
+					<td th:text="${conexion.id}"></td>
+					<td th:text="${conexion.host}"></td>
+					<td th:text="${conexion.port}"></td>
+					<td th:text="${conexion.user}"></td>
+					<td th:text="${conexion.pass}"></td>
+					<td th:text="${conexion.alias}"></td>
+					<td th:text="${conexion.active}"></td>
+					<td th:text="${conexion.idType}"></td>
+					<td th:text="${conexion.createdData}"></td>
 				</tr>
 			</tbody>
 		</table>

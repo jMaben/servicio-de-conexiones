@@ -20,7 +20,7 @@ public class Connections implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	
 	private String host;
 	private int port;
@@ -36,11 +36,11 @@ public class Connections implements Serializable{
 	@Temporal(TemporalType.DATE)
 	private Date createdData;
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

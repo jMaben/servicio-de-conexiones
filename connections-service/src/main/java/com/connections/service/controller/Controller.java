@@ -21,8 +21,8 @@ public class Controller {
 	
 	@GetMapping("/listar")
 	public String listar(Model model) {
-		List<Connections>connec=service.listar();
-		model.addAttribute("conexiones", connec);
+		List<Connections>conexiones=service.listar();
+		model.addAttribute("conexiones", conexiones);
 		return "index";
 	}
 }
