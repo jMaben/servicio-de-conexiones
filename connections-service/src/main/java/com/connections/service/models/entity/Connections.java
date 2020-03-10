@@ -18,11 +18,12 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "connections")
-@Getter @Setter
+@Getter @Setter @NoArgsConstructor
 public class Connections implements Serializable{
 	
 	private static final long serialVersionUID = -2173385203936724383L;

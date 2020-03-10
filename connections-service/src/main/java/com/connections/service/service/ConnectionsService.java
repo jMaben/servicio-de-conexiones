@@ -27,7 +27,12 @@ public class ConnectionsService implements IConnectionsService{
 
 	@Override
 	public int save(Connections c) {
-		return 0;
+		int res=0;
+		Connections connec =repository.save(c);
+		if (!connec.equals(null)) {
+			res=1;
+		}
+		return res;
 	}
 
 	@Override

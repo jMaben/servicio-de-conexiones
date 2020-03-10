@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>New Connections</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container mt-4">
+		<div class="col-sm-6">
+			<form th:action="@{/save}" th:object=${connections} method="post">
+				<div class="card">
+					<div class="card-header">
+						<h3>Connections</h3>
+					</div>
+					<div class="card-body">
+						<div class="form-group">
+							<label>ID</label> 
+							<input th:field="*{id}" type="text"	class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>HOST</label> <input th:field="*{host}" type="text"
+								class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>PORT</label> <input th:field="*{port}" type="text"
+								class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>USER</label> <input th:field="*{user}" type="text"
+								class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>PASS</label> <input th:field="*{pass}" type="text"
+								class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>ALIAS</label> <input th:field="*{alias}" type="text"
+								class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>ACTIVE</label> <input th:field="*{active}" type="text"
+								class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>ID TYPE</label> <input th:field="*{idType}" type="text"
+								class="form-control"/>
+						</div>
+						<div class="form-group">
+							<label>DATE</label> <input th:field="*{createdData}" type="text"
+								class="form-control"/>
+						</div>
+					</div>
+					<div class="card-footer">
+						<input type="submit" value="Guardar" class="btn btn-success">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
