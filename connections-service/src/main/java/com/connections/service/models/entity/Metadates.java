@@ -23,7 +23,7 @@ public class Metadates implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	private String metadate;
 	private String description;

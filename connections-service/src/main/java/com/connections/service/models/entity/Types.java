@@ -26,18 +26,19 @@ public class Types implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	
-	@Column(name = "id_type_group")
-    //@ManyToOne
-    //@JoinColumn
-	private int idTypeGroup;
+    @ManyToOne
+    @JoinColumn
+	private TypesGroups idTypeGroup;
 	
 	private String type;
 	private String description;
 	private String driver; 
 	
-	//@OneToMany(mappedBy = "id_type", cascade = CascadeType.ALL)
-    //private Set<Connections> connections;
+	@OneToMany(mappedBy = "idType", cascade = CascadeType.ALL)
+    private Set<Connections> connections;
+	
+	
 }

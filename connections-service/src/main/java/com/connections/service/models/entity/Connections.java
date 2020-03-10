@@ -29,7 +29,7 @@ public class Connections implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	private String host;
 	private int port;
@@ -40,10 +40,9 @@ public class Connections implements Serializable{
 	private String alias;
 	private boolean active;
 	
-	@Column(name = "id_type")
-    //@ManyToOne
-    //@JoinColumn
-	private int idType;
+    @ManyToOne
+    @JoinColumn
+	private Types idType;
 	
 	@Column(name = "created_date")
 	@Temporal(TemporalType.DATE)

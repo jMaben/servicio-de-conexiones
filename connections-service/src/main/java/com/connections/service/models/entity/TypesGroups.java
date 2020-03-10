@@ -23,11 +23,11 @@ public class TypesGroups implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	private String typeGroup;
 	private String description;
 	
-	//@OneToMany(mappedBy = "id_type_group", cascade = CascadeType.ALL)
-    //private Set<Types> types;
+	@OneToMany(mappedBy = "idTypeGroup", cascade = CascadeType.ALL)
+    private Set<Types> types;
 }
