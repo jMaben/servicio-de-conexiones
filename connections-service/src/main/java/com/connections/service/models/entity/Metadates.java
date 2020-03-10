@@ -1,12 +1,14 @@
 package com.connections.service.models.entity;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.Getter;
@@ -31,6 +33,9 @@ public class Metadates implements Serializable{
 	
 	private int level;
 	private boolean active; 
+	
+	//@ManyToMany(mappedBy = "MetadateConnections")
+	//Set<Connections> likes;
 
 	
 }

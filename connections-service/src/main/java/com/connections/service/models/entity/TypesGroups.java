@@ -28,6 +28,6 @@ public class TypesGroups implements Serializable{
 	private String typeGroup;
 	private String description;
 	
-	@OneToMany(mappedBy = "id_type_group", cascade = CascadeType.ALL)
-    private Set<Types> types;
+	//@OneToMany(mappedBy = "id_type_group", cascade = CascadeType.ALL)
+    //private Set<Types> types;
 }

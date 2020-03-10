@@ -2,12 +2,17 @@ package com.connections.service.models.entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -36,10 +41,19 @@ public class Connections implements Serializable{
 	private boolean active;
 	
 	@Column(name = "id_type")
+    //@ManyToOne
+    //@JoinColumn
 	private int idType;
 	
 	@Column(name = "created_date")
 	@Temporal(TemporalType.DATE)
 	private Date createdData;
+	
+	/*@ManyToMany
+	@JoinTable(
+	  name = "connections_metadates", 
+	  joinColumns = @JoinColumn(name = "id_connection"), 
+	  inverseJoinColumns = @JoinColumn(name = "id_metadate"))
+	private Set<Metadates> MetadateConnections;*/
 
 }
