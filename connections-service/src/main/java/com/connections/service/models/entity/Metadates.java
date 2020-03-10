@@ -34,8 +34,7 @@ public class Metadates implements Serializable{
 	private int level;
 	private boolean active; 
 	
-	//@ManyToMany(mappedBy = "MetadateConnections")
-	//Set<Connections> likes;
-
+	@ManyToMany(mappedBy = "ConnectionsMetadates")
+	private Set<Connections> MetadatesConnections;
 	
 }

@@ -41,18 +41,18 @@ public class Connections implements Serializable{
 	private boolean active;
 	
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "id_type")
 	private Types idType;
 	
 	@Column(name = "created_date")
 	@Temporal(TemporalType.DATE)
 	private Date createdData;
 	
-	/*@ManyToMany
+	@ManyToMany
 	@JoinTable(
 	  name = "connections_metadates", 
 	  joinColumns = @JoinColumn(name = "id_connection"), 
 	  inverseJoinColumns = @JoinColumn(name = "id_metadate"))
-	private Set<Metadates> MetadateConnections;*/
+	private Set<Metadates> ConnectionsMetadates;
 
 }

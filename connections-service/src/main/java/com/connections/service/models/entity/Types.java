@@ -30,7 +30,7 @@ public class Types implements Serializable{
 	
 	
     @ManyToOne
-    @JoinColumn
+    @JoinColumn(name = "id_type_group")
 	private TypesGroups idTypeGroup;
 	
 	private String type;
