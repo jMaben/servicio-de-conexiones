@@ -2,6 +2,7 @@ package com.connections.service.controller;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -13,7 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.connections.service.models.entity.Connections;
+import com.connections.service.models.entity.Metadates;
 import com.connections.service.service.ConnectionsService;
+import com.connections.service.service.MetadatesService;
 
 
 @org.springframework.stereotype.Controller
@@ -43,9 +46,12 @@ public class Controller {
 		return "redirect:/listar";
 	}
 	
+	
+	@GetMapping("/editar/{id}")
 	public String editar(@PathVariable int id, Model model) {
 		Optional<Connections>conexiones=service.listarId(id);
 		model.addAttribute("conexiones",conexiones);
 		return "form";
 	}
+	
 }

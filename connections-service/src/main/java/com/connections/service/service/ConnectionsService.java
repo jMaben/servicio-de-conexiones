@@ -22,7 +22,7 @@ public class ConnectionsService implements IConnectionsService{
 
 	@Override
 	public Optional<Connections> listarId(int id) {
-		return null;
+		return repository.findById((long) id);
 	}
 
 	@Override
@@ -37,7 +37,8 @@ public class ConnectionsService implements IConnectionsService{
 
 	@Override
 	public void delete(int id) {
-		
+		//Connections connec = repository.findById((long) id);
+		//repository.delete(connec);
 	}
 
 }
