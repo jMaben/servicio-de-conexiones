@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,5 +31,6 @@ public class TypesGroups implements Serializable{
 	private String description;
 	
 	@OneToMany(mappedBy = "idTypeGroup", cascade = CascadeType.ALL)
+	@JsonIgnore
     private Set<Types> types;
 }
