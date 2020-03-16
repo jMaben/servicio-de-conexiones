@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,6 +25,7 @@ public class ControllerTypes {
 	@Autowired
 	private TypesRepository serviceTypes;
 	
+	@CrossOrigin
 	@GetMapping("/listarTypes")
 	public List<Types> listar(){
 		return ((Collection<Types>) serviceTypes.findAll()).stream().map(Type->{

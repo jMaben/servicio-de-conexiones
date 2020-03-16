@@ -5,9 +5,12 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.connections.service.models.entity.Connections;
+import com.connections.service.models.entity.Metadates;
 import com.connections.service.models.repository.ConnectionsRepository;
+import com.connections.service.models.repository.MetadatesRepository;
 
 @Service
 public class ConnectionsService implements IConnectionsService{
@@ -16,29 +19,25 @@ public class ConnectionsService implements IConnectionsService{
 	private ConnectionsRepository repository;
 	
 	@Override
-	public List<Connections> listar() {
+	@Transactional(readOnly = true)
+	public List<Connections> findAll() {
 		return (List<Connections>) repository.findAll();
 	}
 
 	@Override
-	public Optional<Connections> listarId(int id) {
-		return repository.findById((long) id);
+	@Transactional(readOnly = true)
+	public Connections findById(Long id) {
+		return repository.findById(id).orElse(null);
 	}
 
 	@Override
-	public int save(Connections c) {
-		int res=0;
-		Connections connec =repository.save(c);
-		if (!connec.equals(null)) {
-			res=1;
-		}
-		return res;
+	public Connections save(Connections c) {
+		return repository.save(c);
 	}
 
 	@Override
-	public void delete(int id) {
-		//Connections connec = repository.findById((long) id);
-		//repository.delete(connec);
+	public void deleteById(Long id) {
+		repository.deleteById(id);
 	}
 
 }

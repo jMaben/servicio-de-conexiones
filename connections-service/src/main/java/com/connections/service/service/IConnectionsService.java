@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import com.connections.service.models.entity.Connections;
+import com.connections.service.models.entity.Metadates;
 
 public interface IConnectionsService {
-	public List<Connections>listar();
-	public Optional<Connections>listarId(int id);
-	public int save(Connections c);
-	public void delete(int id);
-	
+	public List<Connections>findAll();
+	public Connections findById(Long id);
+	public Connections save(Connections c);
+	public void deleteById(Long id);
 	
 }
