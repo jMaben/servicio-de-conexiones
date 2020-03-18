@@ -1,6 +1,13 @@
 package com.connections.service.controller;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -50,28 +57,36 @@ public class Controller {
 		return c;
 	}
 	
-	
+	@CrossOrigin
+	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping("/crearConnections")
 	public Connections crear(@RequestBody Connections c) {
+		//CreatedData opcion de fecha
+		if (c.getCreatedData() == null) {
+			LocalDate localDate = LocalDate.now();
+			Date date = new Date(localDate.atStartOfDay(ZoneId.of("Europe/Paris")).toEpochSecond() * 1000);
+			c.setCreatedData(date);
+		}
 		return service.save(c);
 	}
 	
 	
-	
+	@CrossOrigin
+	@ResponseStatus(HttpStatus.CREATED)
 	@PutMapping("/editarConnections/{id}")
-	public Connections editar(@RequestBody Connections connec, @PathVariable Long id) {
+	public void editar(@RequestBody Connections connec, @PathVariable Long id) {
 		Connections c = service.findById(id);
 		c.setAlias(connec.getAlias());
 		c.setUser(connec.getUser());
 		c.setHost(connec.getHost());
 		c.setPort(connec.getPort());
 		c.setPass(connec.getPass());
-		c.setIdType(connec.getIdType());
-		c.setCreatedData(connec.getCreatedData());
+		c.setTypes(connec.getTypes());
 		c.setActive(connec.isActive());
-		return c;
+		service.save(c);
 	}	
 	
+	@CrossOrigin
 	@DeleteMapping("/eliminarConnections/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void eliminar(@PathVariable long id) {

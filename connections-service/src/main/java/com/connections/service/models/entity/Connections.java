@@ -17,6 +17,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -43,10 +45,11 @@ public class Connections implements Serializable{
 	
     @ManyToOne
     @JoinColumn(name = "id_type")
-	private Types idType;
+	private Types types;
 	
 	@Column(name = "created_date")
 	@Temporal(TemporalType.DATE)
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date createdData;
 	
 	@ManyToMany

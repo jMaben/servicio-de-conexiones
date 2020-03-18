@@ -31,11 +31,13 @@ public class ConnectionsService implements IConnectionsService{
 	}
 
 	@Override
+	@Transactional
 	public Connections save(Connections c) {
 		return repository.save(c);
 	}
 
 	@Override
+	@Transactional
 	public void deleteById(Long id) {
 		repository.deleteById(id);
 	}
