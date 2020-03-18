@@ -2,7 +2,7 @@ package com.connections.service.service;
 
 import java.util.List;
 
-import com.connections.service.models.entity.Types;;
+import com.connections.service.app.commons.models.entity.Types;
 
 public interface ITypesService {
 

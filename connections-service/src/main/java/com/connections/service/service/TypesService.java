@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.connections.service.models.entity.Types;
+import com.connections.service.app.commons.models.entity.Types;
 
 public class TypesService implements ITypesService{
 

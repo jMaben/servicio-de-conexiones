@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.connections.service.models.entity.Metadates;
+import com.connections.service.app.commons.models.entity.Metadates;
 import com.connections.service.models.repository.MetadatesRepository;
 
 @RestController

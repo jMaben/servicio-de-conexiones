@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.connections.service.models.entity.Metadates;
+import com.connections.service.app.commons.models.entity.Metadates;
 import com.connections.service.models.repository.MetadatesRepository;
 
 public class MetadatesService implements IMetadatesService{

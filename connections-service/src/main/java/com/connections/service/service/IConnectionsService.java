@@ -1,10 +1,8 @@
 package com.connections.service.service;
 
 import java.util.List;
-import java.util.Optional;
 
-import com.connections.service.models.entity.Connections;
-import com.connections.service.models.entity.Metadates;
+import com.connections.service.app.commons.models.entity.Connections;
 
 public interface IConnectionsService {
 	public List<Connections>findAll();
