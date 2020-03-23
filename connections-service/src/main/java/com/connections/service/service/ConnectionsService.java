@@ -6,8 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.connections.service.app.commons.models.entity.Connections;
 import com.connections.service.models.repository.ConnectionsRepository;
+
+import app.commons.models.entity.Connections;
 
 @Service
 public class ConnectionsService implements IConnectionsService{

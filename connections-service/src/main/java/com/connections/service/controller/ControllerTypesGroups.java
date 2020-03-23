@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.connections.service.app.commons.models.entity.TypesGroups;
 import com.connections.service.models.repository.TypesGroupsRepository;
+
+import app.commons.models.entity.TypesGroups;
 
 @RestController
 public class ControllerTypesGroups {

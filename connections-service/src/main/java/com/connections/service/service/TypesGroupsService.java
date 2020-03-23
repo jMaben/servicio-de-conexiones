@@ -5,8 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.connections.service.app.commons.models.entity.TypesGroups;
 import com.connections.service.models.repository.TypesGroupsRepository;
+
+import app.commons.models.entity.TypesGroups;
 
 public class TypesGroupsService implements ITypesGroupsService{
 
