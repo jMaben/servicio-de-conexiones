@@ -6,7 +6,7 @@ import app.commons.models.entity.TypesGroups;
 
 public interface ITypesGroupsService {
 
-	/*
+	/**
 	 * Esta interfaz es la que va a implementar el servicio de TypesGroups.
 	 */
 	public List<TypesGroups> findAll();

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import app.commons.models.entity.Connections;
 
 
-/*
+/**
  * Este es repositorio de Connections, el cual extiende de PagingAndSortingRepository para heredar metodos
  * basicos para hacer un CRUD por ejemplo.
  */

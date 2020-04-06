@@ -17,7 +17,7 @@ public class ConnectionsService implements IConnectionsService{
 	@Autowired
 	private ConnectionsRepository repository;
 
-	/*
+	/**
 	 * Este metodo busca todos los objetos de tipo Connections en el repositorio, retornando
 	 * el resultado en un objeto tipo List.
 	 * 
@@ -29,7 +29,7 @@ public class ConnectionsService implements IConnectionsService{
 		return (List<Connections>) repository.findAll();
 	}
 
-	/*
+	/**
 	 * Recibe un parametro, en este caso uno numerico de tipo Long que se refiere al id del objeto que se desea buscar.
 	 * Se realiza una busqueda en el repositorio por dicho id y se devuelve el objeto tipo Connections
 	 * que se deseaba buscar. 
@@ -44,7 +44,7 @@ public class ConnectionsService implements IConnectionsService{
 		return repository.findById(id).orElse(null);
 	}
 
-	/*
+	/**
 	 * Se envia un objeto tipo Connections para que se guarde, este se guarda en el repositorio gracias al metodo save
 	 * que hereda el cual extiende de PagingAndSortingRepository. 
 	 * 
@@ -58,7 +58,7 @@ public class ConnectionsService implements IConnectionsService{
 		return repository.save(c);
 	}
 
-	/*
+	/**
 	 * Enviando un id se elimina del repositorio un objecto tipo Connections.
 	 * 
 	 * @param id

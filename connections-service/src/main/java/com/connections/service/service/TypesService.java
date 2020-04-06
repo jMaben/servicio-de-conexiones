@@ -13,7 +13,7 @@ public class TypesService implements ITypesService{
 	private TypesService repository;
 	
 	
-	/*
+	/**
 	 * Este metodo busca todos los objetos de tipo Types en el repositorio, retornando
 	 * el resultado en un objeto tipo List.
 	 * 
@@ -25,7 +25,7 @@ public class TypesService implements ITypesService{
 		return (List<Types>) repository.findAll();
 	}
 
-	/*
+	/**
 	 * Recibe un parametro, en este caso uno numerico de tipo Long que se refiere al id del objeto que se desea buscar.
 	 * Se realiza una busqueda en el repositorio por dicho id y se devuelve el objeto tipo Types
 	 * que se deseaba buscar. 
@@ -40,7 +40,7 @@ public class TypesService implements ITypesService{
 		return repository.findById(id);
 	}
 
-	/*
+	/**
 	 * Se envia un objeto tipo Types para que se guarde, este se guarda en el repositorio gracias al metodo save
 	 * que hereda el cual extiende de PagingAndSortingRepository. 
 	 * 
@@ -53,7 +53,7 @@ public class TypesService implements ITypesService{
 		return repository.save(type);
 	}
 
-	/*
+	/**
 	 * Enviando un id se elimina del repositorio un objecto tipo Types.
 	 * 
 	 * @param id

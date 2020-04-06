@@ -26,7 +26,7 @@ public class ControllerTypesGroups {
 	@Autowired
 	private TypesGroupsRepository serviceTypesGroups;
 	
-	/*
+	/**
 	 * Es un metodo http el cual retorna una lista de objetos TypesGroups que previamente se han buscado
 	 * y se han combertido a una lista tipo List.
 	 * 
@@ -40,7 +40,7 @@ public class ControllerTypesGroups {
 		}).collect(Collectors.toList());
 	}
 	
-	/*
+	/**
 	 * Es un metodo http el cual retorna un objeto TypesGroups, previamente se ha buscado por
 	 * su id que este lo recive por la llamada http como parametro.
 	 * 
@@ -54,7 +54,7 @@ public class ControllerTypesGroups {
 		return meta;
 	}
 	
-	/*
+	/**
 	 * Este metodo añade un nuevo objeto TypesGroups. Recibe uno por por el http tipo POST
 	 * y finalmente lo guarda.
 	 * 
@@ -67,7 +67,7 @@ public class ControllerTypesGroups {
 		return serviceTypesGroups.save(meta);
 	}
 	
-	/*
+	/**
 	 * Este metodo edita un objeto tipo TypesGroups ya registrado, revice un id mas un objecto. Se busca
 	 * el objeto con el id y se edita con los datos del otro objeto previamente recibido.
 	 * 
@@ -85,7 +85,7 @@ public class ControllerTypesGroups {
 	}
 	
 	
-	/*
+	/**
 	 * Este metodo elimina un objeto TypesGroups ya existente, recibiendo un id por la peticion http.
 	 * 
 	 * @param id

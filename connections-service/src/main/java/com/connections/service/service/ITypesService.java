@@ -4,7 +4,7 @@ import java.util.List;
 
 import app.commons.models.entity.Types;
 
-/*
+/**
  * Esta interfaz es la que va a implementar el servicio de Types.
  */
 public interface ITypesService {

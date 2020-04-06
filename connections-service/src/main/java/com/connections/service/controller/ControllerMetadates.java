@@ -27,7 +27,7 @@ public class ControllerMetadates {
 	private MetadatesRepository serviceMetadates;
 	
 	
-	/*
+	/**
 	 * Es un metodo http el cual retorna una lista de objetos Metadates que previamente se han buscado
 	 * y se han combertido a una lista tipo List.
 	 * 
@@ -56,7 +56,7 @@ public class ControllerMetadates {
 		return meta;
 	}
 	
-	/*
+	/**
 	 * Este metodo añade un nuevo objeto Metadates. Recibe uno por por el http tipo POST
 	 * y finalmente lo guarda.
 	 * 
@@ -69,7 +69,7 @@ public class ControllerMetadates {
 		return serviceMetadates.save(meta);
 	}
 	
-	/*
+	/**
 	 * Este metodo edita un objeto tipo Metadates ya registrado, revice un id mas un objecto. Se busca
 	 * el objeto con el id y se edita con los datos del otro objeto previamente recibido.
 	 * 
@@ -89,7 +89,7 @@ public class ControllerMetadates {
 		return metadate;
 	}
 	
-	/*
+	/**
 	 * Este metodo elimina un objeto Metadates ya existente, recibiendo un id por la peticion http.
 	 * 
 	 * @param id
