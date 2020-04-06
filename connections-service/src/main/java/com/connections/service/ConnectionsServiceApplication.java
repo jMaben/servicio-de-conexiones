@@ -10,6 +10,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EntityScan({"app.commons.models.entity"})
 public class ConnectionsServiceApplication {
 
+	/*
+	 * Este metodo es el pricipal es el que inicia el programa
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(ConnectionsServiceApplication.class, args);
 	}

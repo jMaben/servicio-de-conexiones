@@ -33,6 +33,12 @@ public class Controller {
 	@Autowired
 	private ConnectionsService service;
 	
+	/*
+	 * Es un metodo http el cual retorna una lista de objetos Connections que previamente se han buscado
+	 * y se han combertido a una lista tipo List.
+	 * 
+	 * @return
+	 */
 	@CrossOrigin
 	@GetMapping("/listar")
 	public List<Connections> listar(Model model) {
@@ -41,6 +47,14 @@ public class Controller {
 		}).collect(Collectors.toList());
 	}
 	
+	/*
+	 * Es un metodo http el cual retorna un objeto Connections, previamente se ha buscado por
+	 * su id que este lo recive por la llamada http como parametro.
+	 * 
+	 * @param id
+	 * 
+	 * @return
+	 */
 	@CrossOrigin
 	@GetMapping("/verConnections/{id}")
 	public Connections detalle(@PathVariable Long id) {
@@ -48,6 +62,14 @@ public class Controller {
 		return c;
 	}
 	
+	/*
+	 * Este metodo añade un nuevo objeto Connections. Recibe uno por por el http tipo POST, 
+	 * si no tiene fecha se la añade y finalmente lo guarda.
+	 * 
+	 * @param c
+	 * 
+	 * @return
+	 */
 	@CrossOrigin
 	@ResponseStatus(HttpStatus.CREATED)
 	@PostMapping("/crearConnections")
@@ -61,7 +83,15 @@ public class Controller {
 		return service.save(c);
 	}
 	
-	
+	/*
+	 * Este metodo edita un objeto tipo Connections ya registrado, revice un id mas un objecto. Se busca
+	 * el objeto con el id y se edita con los datos del otro objeto previamente recibido.
+	 * 
+	 * @param connec
+	 * @param id
+	 * 
+	 * @return
+	 */
 	@CrossOrigin
 	@ResponseStatus(HttpStatus.CREATED)
 	@PutMapping("/editarConnections/{id}")
@@ -77,6 +107,11 @@ public class Controller {
 		service.save(c);
 	}	
 	
+	/*
+	 * Este metodo elimina un objeto Connections ya existente, recibiendo un id por la peticion http.
+	 * 
+	 * @param id
+	 */
 	@CrossOrigin
 	@DeleteMapping("/eliminarConnections/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)

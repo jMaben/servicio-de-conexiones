@@ -6,6 +6,9 @@ import app.commons.models.entity.Metadates;
 
 public interface IMetadatesService {
 
+	/*
+	 * Esta interfaz es la que va a implementar el servicio de Metadates.
+	 */
 	public List<Metadates> findAll();
 	public Metadates findById(Long id);
 	public Metadates save(Metadates metadates);
