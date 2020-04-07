@@ -50,6 +50,7 @@ public class ControllerMetadates {
 	 * 
 	 * @return
 	 */
+	@CrossOrigin
 	@GetMapping("/verMetadates/{id}")
 	public Metadates detalle(@PathVariable Long id) {
 		Metadates meta = serviceMetadates.findById(id).orElse(null);
@@ -64,6 +65,7 @@ public class ControllerMetadates {
 	 * 
 	 * @return
 	 */
+	@CrossOrigin
 	@PostMapping("/crearMetadates")
 	public Metadates crear(@RequestBody Metadates meta) {
 		return serviceMetadates.save(meta);
@@ -78,6 +80,7 @@ public class ControllerMetadates {
 	 * 
 	 * @return
 	 */
+	@CrossOrigin
 	@PutMapping("/editarMetadates/{id}")
 	public Metadates editar(@RequestBody Metadates meta, @PathVariable Long id) {
 		Metadates metadate = serviceMetadates.findById(id).orElse(null);
@@ -94,6 +97,7 @@ public class ControllerMetadates {
 	 * 
 	 * @param id
 	 */
+	@CrossOrigin
 	@DeleteMapping("/eliminarMetadates/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void eliminar(@PathVariable long id) {
