@@ -57,6 +57,14 @@ public class ControllerMetadates {
 		return meta;
 	}
 	
+	@CrossOrigin
+	@GetMapping("/table/{id}")
+	public List<Metadates> tableConnectionMetadates(@PathVariable Long id){
+		return ((Collection<Metadates>) serviceMetadates.allConnectionsMetadatesTable(id)).stream().map(Meta ->{
+			return Meta;
+		}).collect(Collectors.toList());
+	}
+	
 	/**
 	 * Este metodo añade un nuevo objeto Metadates. Recibe uno por por el http tipo POST
 	 * y finalmente lo guarda.

@@ -64,4 +64,8 @@ public class MetadatesService implements IMetadatesService{
 		repository.deleteById(id);
 	}
 
+	@Override
+	public List<Metadates> findAllConnectionMetadates(Long id) {
+		return (List<Metadates>) repository.allConnectionsMetadatesTable(id);
+	}
 }
